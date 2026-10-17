@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coach-sante-ia"
+version = "0.1.0"
+description = "Daily AI health coach fed by Garmin data"
+requires-python = ">=3.11"
+dependencies = [
+    "garminconnect==0.3.2",
+    "google-genai>=1.0",
+    "pydantic>=2.6",
+    "typer>=0.12",
+    "jinja2>=3.1",
+    "httpx>=0.27",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+coach = "coach.cli:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+coach = ["schema.sql", "prompts/*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

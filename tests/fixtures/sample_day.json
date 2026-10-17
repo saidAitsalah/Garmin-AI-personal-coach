@@ -1,0 +1,60 @@
+{
+  "_comment": "SYNTHETIC payloads shaped like Garmin Connect responses. Replace with anonymised real ones once you have run `coach backfill` (see `coach inspect`).",
+  "sleep": {
+    "dailySleepDTO": {
+      "sleepTimeSeconds": 27000,
+      "deepSleepSeconds": 5400,
+      "lightSleepSeconds": 15600,
+      "remSleepSeconds": 5400,
+      "awakeSleepSeconds": 1200,
+      "averageRespirationValue": 14.2,
+      "sleepScores": {"overall": {"value": 82, "qualifierKey": "GOOD"}}
+    },
+    "restingHeartRate": 52,
+    "avgOvernightHrv": 61
+  },
+  "hrv": {
+    "hrvSummary": {
+      "weeklyAvg": 58,
+      "lastNightAvg": 61,
+      "status": "BALANCED",
+      "baseline": {"lowUpper": 45, "balancedLow": 50, "balancedUpper": 68, "markerValue": 0.5}
+    }
+  },
+  "stats": {
+    "restingHeartRate": 52,
+    "averageStressLevel": 28,
+    "bodyBatteryAtWakeTime": 78,
+    "bodyBatteryHighestValue": 85,
+    "totalSteps": 8421
+  },
+  "readiness": [
+    {"inputContext": "AFTER_POST_EXERCISE_RESET", "score": 55, "level": "MODERATE"},
+    {"inputContext": "AFTER_WAKEUP_RESET", "score": 72, "level": "HIGH"}
+  ],
+  "training_status": {
+    "mostRecentVO2Max": {"generic": {"vo2MaxPreciseValue": 51.4, "vo2MaxValue": 51}},
+    "mostRecentTrainingStatus": {
+      "latestTrainingStatusData": {
+        "1234567": {
+          "primaryTrainingDevice": true,
+          "acuteTrainingLoadDTO": {
+            "dailyTrainingLoadAcute": 420,
+            "dailyTrainingLoadChronic": 380,
+            "dailyAcuteChronicWorkloadRatio": 1.11
+          }
+        }
+      }
+    }
+  },
+  "respiration": {"avgWakingRespirationValue": 15.1, "avgSleepRespirationValue": 14.0},
+  "max_metrics": [{"generic": {"vo2MaxValue": 51}}],
+  "activities": [
+    {"activityId": 1001, "startTimeLocal": "2026-10-16 18:05:00", "activityType": {"typeKey": "strength_training"},
+     "duration": 3600.0, "distance": 0.0, "averageHR": 118, "activityTrainingLoad": 95.5,
+     "aerobicTrainingEffect": 2.1, "anaerobicTrainingEffect": 3.4},
+    {"activityId": 1002, "startTimeLocal": "2026-10-16 07:30:00", "activityType": {"typeKey": "lap_swimming"},
+     "duration": 2400.0, "distance": 1200.0, "averageHR": 130, "activityTrainingLoad": 60.0,
+     "aerobicTrainingEffect": 2.8, "anaerobicTrainingEffect": 0.0}
+  ]
+}

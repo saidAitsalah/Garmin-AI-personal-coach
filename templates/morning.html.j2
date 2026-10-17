@@ -1,0 +1,20 @@
+<b>{{ level_emoji }} Rapport du {{ date_fr }}</b>
+{% if score is not none %}Score de forme : <b>{{ score }}/100</b> · {% endif %}Récupération : <b>{{ level_label }}</b>
+
+{% for r in reasons %}• {{ r }}
+{% endfor %}{% if not reasons %}• Tous les indicateurs sont dans le vert.
+{% endif %}
+<b>📊 Chiffres du matin</b>
+{% for m in metrics %}{{ m.label }} : <b>{{ m.value }}</b>{% if m.trend %} {{ m.trend }} (moy. 7 j : {{ m.avg7 }}){% endif %}
+{% endfor %}{% if sleep_debt %}Dette de sommeil (7 j) : <b>{{ sleep_debt }}</b>
+{% endif %}
+<b>🏋️ Programme du jour : {{ plan.title }}</b> ({{ plan.duration_min }} min)
+{% for b in plan.blocks %}• <b>{{ b.name }}</b> : {{ b.details }}
+{% endfor %}
+<i>{{ plan.rationale }}</i>
+
+<b>😴 Récupération</b> : {{ plan.recovery_tip }}
+<b>🧘 Stress</b> : {{ plan.stress_tip }}
+{% if notes %}
+{% for n in notes %}<i>{{ n }}</i>
+{% endfor %}{% endif %}

@@ -1,0 +1,19 @@
+# Numeric settings used by the deterministic safety rules (src/coach/rules.py).
+# Tune these to your own baseline. The LLM can never exceed the ceiling these produce.
+
+language = "français"
+
+[thresholds]
+sleep_target_min = 480            # your sleep goal (8 h)
+short_sleep_min = 360             # below: ceiling "moderate" (no hard session)
+very_short_sleep_min = 300        # below: ceiling "easy"
+hrv_streak_moderate_days = 2      # days in a row with HRV under baseline -> moderate
+hrv_streak_easy_days = 3          # days in a row with HRV under baseline -> easy
+load_ratio_high = 1.5             # acute/chronic load ratio above: reduce volume, max moderate
+rhr_delta_moderate = 5            # resting HR (bpm) above the 30-day mean -> moderate
+readiness_rest_below = 25         # Garmin training readiness under this -> rest
+readiness_easy_below = 40         # Garmin training readiness under this -> easy
+body_battery_easy_below = 30      # body battery at wake-up under this -> easy
+no_back_to_back_hard = true       # a hard session yesterday -> max moderate today
+hard_aerobic_te = 3.5             # a session is "hard" at/above this aerobic training effect...
+hard_anaerobic_te = 3.0           # ...or this anaerobic training effect
