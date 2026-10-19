@@ -42,6 +42,9 @@ def main() -> None:
         handlers=[logging.StreamHandler(), RotatingFileHandler(log_dir / "coach.log", maxBytes=1_000_000,
                                                                backupCount=3, encoding="utf-8")],
     )
+    # httpx logs full request URLs at INFO, and Telegram's URL contains the bot token.
+    for noisy in ("httpx", "httpcore"):
+        logging.getLogger(noisy).setLevel(logging.WARNING)
 
 
 def _fail(e: Exception) -> typer.Exit:
